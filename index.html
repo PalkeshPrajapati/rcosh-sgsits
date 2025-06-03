@@ -18,7 +18,7 @@
           <img class="w-auto h-9 sm:h-12" src="./public/img/rekhi_foundation_logo.jpeg" alt="Rekhi Foundation Logo">
         </a>
 
-        <div class="flex items-center justify-center mt-6 text-gray-600 capitalize">
+        <div class="flex items-center sm:justify-center mt-6 text-gray-600 capitalize">
           <a href="#" class="mx-2 text-gray-800 border-b-2 border-blue-500 sm:mx-6">Home</a>
           <a href="#about" class="mx-2 border-b-2 border-transparent hover:text-gray-800 hover:border-blue-500 sm:mx-6">About</a>
           <a href="#events" class="mx-2 border-b-2 border-transparent hover:text-gray-800 hover:border-blue-500 sm:mx-6">Events</a>
@@ -30,8 +30,8 @@
 
 
     <!-- Hero Section -->
-    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-      <img src="./public/img/icons/background.jpg" alt="" class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center">
+    <div class="relative isolate overflow-hidden bg-black py-24 sm:py-32">
+      <img src="./public/img/icons/hero-section.jpg" alt="Hero Section Image" class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center opacity-27">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0">
           <h2 class="text-5xl font-semibold tracking-tight text-white sm:text-6xl">The Rekhi Centre of Excellence for the Science of Happiness</h2>
@@ -48,10 +48,6 @@
               <dd class="text-4xl font-semibold tracking-tight text-white">50+</dd>
             </div>
             <div class="flex flex-col-reverse gap-1">
-              <dt class="text-base/7 text-gray-300">Hours per week</dt>
-              <dd class="text-4xl font-semibold tracking-tight text-white">40</dd>
-            </div>
-            <div class="flex flex-col-reverse gap-1">
               <dt class="text-base/7 text-gray-300">Happiness</dt>
               <dd class="text-4xl font-semibold tracking-tight text-white">Unlimited</dd>
             </div>
@@ -59,13 +55,15 @@
         </div>
       </div>
     </div>
+
   </header>
 
 
   <!-- Main -->
   <main>
     <!-- About Section -->
-    <section class="mt-8" id="about">
+    <section class="mt-8 relative" id="about">
+      <img src="./public/img/icons/happy.gif" alt="happy.gif" class="absolute -top-20 -left-12 -z-1 w-52 lg:w-72 opacity-60 scroll-animation">
       <h1 class="text-3xl font-semibold text-gray-800 md:text-4xl text-center">About</h1>
       <div class="container flex flex-col px-6 py-4 mx-auto space-y-6 lg:h-[32rem] lg:py-12 lg:flex-row lg:items-center">
         <div class="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
@@ -76,84 +74,99 @@
           </div>
         </div>
 
-        <div class="flex items-center justify-center w-full h-96 lg:w-1/2">
-          <img class="object-cover w-full h-full max-w-2xl rounded-md" src="./public/img/rekhisingh.jpg" alt="apple watch photo">
+        <div class="flex overflow-hidden items-center justify-center h-96 lg:w-1/2 relative">
+          <img class="object-cover w-full h-full max-w-2xl rounded-md transition-transform duration-300 hover:scale-120" src="./public/img/rekhisingh.jpg" alt="apple watch photo">
+          <figcaption class="absolute px-4 text-lg text-white font-bold bottom-4">
+            <p>Dr. Satinder Singh Rekhi</p>
+          </figcaption>
         </div>
       </div>
     </section>
 
+    <!-- Quote Section -->
+    <section class="relative bg-gradient-to-r from-purple-600 to-blue-600 h-fit p-10 text-white overflow-x-clip">
+      <div class="absolute inset-0 z-1">
+        <img src="./public/img/smile.jpg" alt="Background Image" class="object-cover object-center w-full h-full" />
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+      </div>
+
+      <div class="relative z-10 flex flex-col justify-center items-center h-full text-center">
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-4">Happiness is not something ready-made. It comes from your own actions.</h1>
+        <p class="text-lg text-gray-300 mb-8">Dalai Lama</p>
+      </div>
+      <img src="./public/img/icons/meditation2.png" alt="meditation.gif" class="absolute -right-15 lg:-bottom-65 -bottom-47 w-52 -z-1 lg:w-72 opacity-70 pointer-events-none scroll-animation">
+    </section>
 
     <!-- Events Section -->
-    <section class="container mt-8 px-8 m-auto" id="events">
+    <section class="p-8 pt-18" id="events">
       <h1 class="text-3xl font-semibold text-gray-800 md:text-4xl text-center">Events</h1>
+      <div class="container mx-auto">
+        <!-- Event 1 -->
+        <div data-accordion="collapse" data-active-classes="bg-white text-gray-900" data-inactive-classes="text-gray-500">
+          <h2 id="accordion-flush-heading-1">
+            <button type="button" class="flex items-center justify-between w-full py-5 px-4 font-medium text-gray-500 border-b border-gray-200 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+              <span>Expert lecture on the Science of Happiness by Sri Harikrisnaji</span>
+              <span class="accordion-icon transition-transform duration-300">V</span>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+            <div class="py-5 px-5 border-b border-gray-200">
+              <p class="mb-2 text-gray-500">An expert lecture on the Science of Happiness was delivered by Sri Harikrishnaji, offering deep insights into living a joyful and meaningful life. The event was graced by the presence of our college director and esteemed faculty members, making it a truly enriching experience for all attendees.</p>
+              <p class="text-gray-500">Thankyou!!</p>
 
-      <!-- Event 1 -->
-      <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white text-gray-900" data-inactive-classes="text-gray-500">
-        <h2 id="accordion-flush-heading-1">
-          <button type="button" class="flex items-center justify-between w-full py-5 px-4 font-medium text-gray-500 border-b border-gray-200 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-            <span>Expert lecture on the Science of Happiness by Sri Harikrisnaji</span>
-            <span class="accordion-icon transition-transform duration-300">V</span>
-          </button>
-        </h2>
-        <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
-          <div class="py-5 px-5 border-b border-gray-200">
-            <p class="mb-2 text-gray-500">An expert lecture on the Science of Happiness was delivered by Sri Harikrishnaji, offering deep insights into living a joyful and meaningful life. The event was graced by the presence of our college director and esteemed faculty members, making it a truly enriching experience for all attendees.</p>
-            <p class="text-gray-500">Thankyou!!</p>
-
-
-
-            <div id="carouselExampleControls" class="relative rounded-3xl overflow-hidden mt-4  mx-0 md:mx-8" data-twe-carousel-init data-twe-ride="carousel">
-              <!--Carousel items-->
-              <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-                <!--First item-->
-                <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item data-twe-carousel-active>
-                  <img src="public/img/event1/e1_(1).jpeg" class="block w-full" alt="Wild Landscape" />
+              <!-- Carousel -->
+              <div class="relative rounded-3xl overflow-hidden mt-4 mx-0 md:mx-8" data-twe-carousel-init data-twe-ride="carousel">
+                <!-- Carousel items -->
+                <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+                  <!-- First item -->
+                  <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item data-twe-carousel-active>
+                    <img src="public/img/event1/e1_(1).jpeg" class="block w-full" alt="Wild Landscape" />
+                  </div>
+                  <!-- Second item -->
+                  <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item>
+                    <img src="public/img/event1/e1_(2).jpeg" class="block w-full" alt="Camera" />
+                  </div>
                 </div>
-                <!--Second item-->
-                <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-twe-carousel-item>
-                  <img src="public/img/event1/e1_(2).jpeg" class="block w-full" alt="Camera" />
-                </div>
+
+                <!-- Carousel controls - prev item -->
+                <button class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-twe-slide="prev">
+                  <span class="inline-block h-8 w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                  </span>
+                  <span class="sr-only">Previous</span>
+                </button>
+
+                <!-- Carousel controls - next item -->
+                <button class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-twe-slide="next">
+                  <span class="inline-block h-8 w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </span>
+                  <span class="sr-only">Next</span>
+                </button>
               </div>
 
-              <!--Carousel controls - prev item-->
-              <button class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-twe-target="#carouselExampleControls" data-twe-slide="prev">
-                <span class="inline-block h-8 w-8">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
-                </span>
-                <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Previous</span>
-              </button>
-              <!--Carousel controls - next item-->
-              <button class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-twe-target="#carouselExampleControls" data-twe-slide="next">
-                <span class="inline-block h-8 w-8">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </span>
-                <span class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
-              </button>
+
             </div>
-
-
-
           </div>
         </div>
       </div>
-
     </section>
 
     <!-- Team Section -->
-    <section class="bg-white py-12 sm:py-20" id="team">
+    <section class="bg-white py-12 sm:py-18 relative -z-2" id="team">
       <div class="max-w-xl m-auto mb-8 flex flex-col items-center text-center">
         <div class="flex items-center gap-x-4">
           <h2 class="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl">Team</h2>
         </div>
       </div>
-      <div class="mx-auto grid max-w-7xl gap-20 px-6 lg:px-20">
+      <div class="mx-auto grid max-w-7xl gap-20 px-8 lg:px-20">
         <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 sm:gap-y-16">
           <li>
-            <div class="flex items-center gap-x-6">
+            <div class="flex items-center sm:justify-center gap-x-6">
               <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="Prof. Sarika Tiwan">
               <div>
                 <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Prof. Sarika Tiwan</h3>
@@ -163,7 +176,7 @@
           </li>
 
           <li>
-            <div class="flex items-center gap-x-6">
+            <div class="flex items-center sm:justify-center gap-x-6">
               <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="Ms. Gouri Gupta">
               <div>
                 <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Ms. Gouri Gupta</h3>
@@ -174,7 +187,7 @@
           </li>
 
           <li>
-            <div class="flex items-center gap-x-6">
+            <div class="flex items-center sm:justify-center gap-x-6">
               <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="Mr. Lalit Kanma">
               <div>
                 <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Mr. Lalit Kanma</h3>
@@ -184,7 +197,7 @@
           </li>
 
           <li>
-            <div class="flex items-center gap-x-6">
+            <div class="flex items-center sm:justify-center gap-x-6">
               <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="Mr. Pankaj Vyas">
               <div>
                 <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Mr. Pankaj Vyas</h3>
@@ -194,8 +207,58 @@
           </li>
 
           <li>
-            <div class="flex items-center gap-x-6">
-              <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="Mr. Pankaj Vyas">
+            <div class="flex items-center sm:justify-center gap-x-6">
+              <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="">
+              <div>
+                <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Prof. MPS</h3>
+                <p class="text-sm/6 font-semibold text-indigo-600">Extended Team</p>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="flex items-center sm:justify-center gap-x-6">
+              <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="">
+              <div>
+                <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Prof. MPS</h3>
+                <p class="text-sm/6 font-semibold text-indigo-600">Extended Team</p>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="flex items-center sm:justify-center gap-x-6">
+              <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="">
+              <div>
+                <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Prof. MPS</h3>
+                <p class="text-sm/6 font-semibold text-indigo-600">Extended Team</p>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="flex items-center sm:justify-center gap-x-6">
+              <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="">
+              <div>
+                <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Prof. MPS</h3>
+                <p class="text-sm/6 font-semibold text-indigo-600">Extended Team</p>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="flex items-center sm:justify-center gap-x-6">
+              <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="">
+              <div>
+                <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Prof. MPS</h3>
+                <p class="text-sm/6 font-semibold text-indigo-600">Extended Team</p>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="flex items-center sm:justify-center gap-x-6">
+              <img class="size-16 rounded-full" src="./public/img/icons/profile.gif" alt="">
               <div>
                 <h3 class="text-base/7 font-semibold tracking-tight text-gray-900">Prof. MPS</h3>
                 <p class="text-sm/6 font-semibold text-indigo-600">Extended Team</p>
@@ -208,8 +271,16 @@
 
 
     <!-- Contact Section -->
-    <section class="bg-white" id="contact">
-      <div class="container px-6 py-12 mx-auto">
+    <section class="bg-white relative" id="contact">
+
+      <div class="sm:absolute w-full sm:w-65 sm:h-32 md:w-85 md:h-42 opacity-75 sm:top-5 md:right-10 md:-top-40 flex items-center justify-center mask-size-[100%_100%] bg-black bg-cover p-6 shadow-lg sm:mask-[url(./public/img/icons/mask.png)] bg-position-[center_top_-50px] sm:bg-top bg-[url(./public/img/icons/happy_girl.jpg)]">
+        <h5 class="mb-2 text-xl font-medium leading-tight text-white">
+          Happiness is a state of mind
+        </h5>
+      </div>
+
+
+      <div class="z-1 relative container px-6 pt-2 pb-12 mx-auto">
         <div class="text-center">
           <p class="font-medium text-blue-500"></p>
 
@@ -250,13 +321,13 @@
       </a>
 
       <div class="flex flex-wrap items-center justify-center gap-4 mt-6 lg:gap-6 lg:mt-0">
-        <a href="#" class="flex gap-1 items-center text-md text-white transition-colors duration-300 hover:text-blue-500">
-          <img src="./public/img/icons/instagram.gif" class="h-10" alt="insta gif">
+        <a href="https://www.instagram.com/rekhicenter_sgsits/" target="_blank" class="flex gap-1 items-center text-md text-white transition-colors duration-300 hover:text-blue-500">
+          <img src="./public/img/icons/instagram.gif" class="h-10" id="insta" alt="insta gif" pp="PalkeshPrajapati">
           Instagram
         </a>
-        <a href="#" class="flex gap-1 items-center text-md text-white transition-colors duration-300 hover:text-blue-500">
-          <img src="./public/img/icons/facebook.gif" class="h-10" alt="insta gif">
-          Facebook
+        <a href="https://www.linkedin.com/in/rekhi-center-for-science-of-happiness-08a11b369/" target="_blank" class="flex gap-1 items-center text-md text-white transition-colors duration-300 hover:text-blue-500">
+          <img src="./public/img/icons/linkedin.gif" class="h-10" alt="insta gif">
+          LinkedIn
         </a>
         <a href="#" class="flex gap-1 items-center text-md text-white transition-colors duration-300 hover:text-blue-500">
           <img src="./public/img/icons/youtube.gif" class="h-10" alt="insta gif">

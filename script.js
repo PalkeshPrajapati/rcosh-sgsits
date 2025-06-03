@@ -29,46 +29,51 @@ document.querySelectorAll('[data-accordion-target]').forEach(button => {
 
 // Tailwind CSS Carousel Component
 document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.getElementById("carouselExampleControls");
-    const items = carousel.querySelectorAll("[data-twe-carousel-item]");
-    const prevBtn = carousel.querySelector("[data-twe-slide='prev']");
-    const nextBtn = carousel.querySelector("[data-twe-slide='next']");
+    const carousels = document.querySelectorAll("[data-twe-carousel-init]");
 
-    let currentIndex = 0;
-    const total = items.length;
+    carousels.forEach((carousel) => {
+        const items = carousel.querySelectorAll("[data-twe-carousel-item]");
+        const prevBtn = carousel.querySelector("[data-twe-slide='prev']");
+        const nextBtn = carousel.querySelector("[data-twe-slide='next']");
 
-    function updateCarousel(newIndex) {
-        items.forEach((item, i) => {
-            if (i === newIndex) {
-                item.classList.remove("hidden");
-                item.setAttribute("data-twe-carousel-active", "");
-            } else {
-                item.classList.add("hidden");
-                item.removeAttribute("data-twe-carousel-active");
-            }
+        let currentIndex = 0;
+        const total = items.length;
+
+        function updateCarousel(newIndex) {
+            items.forEach((item, i) => {
+                if (i === newIndex) {
+                    item.classList.remove("hidden");
+                    item.setAttribute("data-twe-carousel-active", "");
+                } else {
+                    item.classList.add("hidden");
+                    item.removeAttribute("data-twe-carousel-active");
+                }
+            });
+            currentIndex = newIndex;
+        }
+
+        // Event Listeners for this specific carousel
+        prevBtn?.addEventListener("click", () => {
+            const newIndex = (currentIndex - 1 + total) % total;
+            updateCarousel(newIndex);
         });
-        currentIndex = newIndex;
-    }
 
-    prevBtn.addEventListener("click", () => {
-        const newIndex = (currentIndex - 1 + total) % total;
-        updateCarousel(newIndex);
-    });
-
-    nextBtn.addEventListener("click", () => {
-        const newIndex = (currentIndex + 1) % total;
-        updateCarousel(newIndex);
-    });
-
-    // Optional: Auto slide every 5s
-    const autoSlide = true;
-    if (autoSlide) {
-        setInterval(() => {
+        nextBtn?.addEventListener("click", () => {
             const newIndex = (currentIndex + 1) % total;
             updateCarousel(newIndex);
-        }, 5000);
-    }
+        });
 
-    // Initialize carousel
-    updateCarousel(currentIndex);
+        // Optional: Auto-slide
+        const autoSlide = true;
+        if (autoSlide) {
+            setInterval(() => {
+                const newIndex = (currentIndex + 1) % total;
+                updateCarousel(newIndex);
+            }, 5000);
+        }
+
+        // Init
+        updateCarousel(currentIndex);
+    });
 });
+
